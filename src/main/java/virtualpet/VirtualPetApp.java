@@ -10,7 +10,7 @@ public class VirtualPetApp {
 
 		VirtualPet simba = new VirtualPet(100, 190, 200);
 
-		String userInput;
+		int userInput;
 
 		System.out.println("Simba the Lion");
 		System.out.println("Hunger : " + simba.getHungerLevel());
@@ -20,38 +20,36 @@ public class VirtualPetApp {
 		simba.tick();
 		do {
 			System.out.println("What do you want to do?");
-			System.out.println("1. Feed Simba");
-			System.out.println("2. Water Simba");
-			System.out.println("3. Sing a lullaby to make Simba sleep");
-			System.out.println("4. Do nothing");
-			userInput = input.nextLine();
-
-			simba.tick();
+			System.out.println("1. Feed Simba \n2. Water Simba \n3. Sing a lullaby to make Simba sleep \n4. Do nothing");
+			userInput = input.nextInt();
+			input.nextLine();
 
 			switch (userInput) {
-			case "1":
+			case 1:
 				simba.FeedSimba();
 				break;
-			case "2":
+			case 2:
 				simba.WaterSimba();
 				break;
-			case "3":
+			case 3:
 				simba.SleepSimba();
 			default:
-				break;
 
 			}
 			System.out.println("Simba the Lion");
 			System.out.println("Hunger : " + simba.getHungerLevel());
 			System.out.println("Thirst : " + simba.getThirstLevel());
 			System.out.println("Sleep : " + simba.getSleepLevel());
-			simba.tick();
-		} while (!userInput.equals("4"));
 
-		System.out.println("Simba the Lion");
-		System.out.println("Hunger : " + simba.getHungerLevel());
-		System.out.println("Thirst : " + simba.getThirstLevel());
-		System.out.println("Sleep : " + simba.getSleepLevel());
+			System.out.println("What else do you want to do with Simba");
+			System.out.println("Hunger : " + simba.getHungerLevel());
+			System.out.println("Thirst : " + simba.getThirstLevel());
+			System.out.println("Sleep : " + simba.getSleepLevel());
+			simba.tick();
+			
+		} while (userInput !=4);
+
+
 		input.close();
 	}
 
