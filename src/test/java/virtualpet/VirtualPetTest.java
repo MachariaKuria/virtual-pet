@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class VirtualPetTest {
 
-	VirtualPet underTest = new VirtualPet(100, 100, 100);
+	VirtualPet underTest = new VirtualPet(0, 0, 0);
 
 	@Test
 	public void hungerShouldGoDownBy5WhenFedBy5() {

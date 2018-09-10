@@ -59,7 +59,19 @@ public class VirtualPet {
 		sleepLevel += sleep;
 		
 	}
+	
+	public void FeedSimba() {
+		hungerLevel -= 10;
+	}
 
+	public void WaterSimba() {
+		thirstLevel -= 15;
+	}
+	
+	public void SleepSimba() {
+		sleepLevel -= 20;
+	}
+	
 	public VirtualPet(int hungerLevel, int thirstLevel, int sleep) {
 
 		this.hungerLevel = hungerLevel;
@@ -67,5 +79,6 @@ public class VirtualPet {
 		this.sleepLevel = sleep;
 	}
 
+	
 
 }
