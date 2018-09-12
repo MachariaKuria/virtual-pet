@@ -6,30 +6,30 @@ import org.junit.Test;
 
 public class VirtualPetTest {
 
-	VirtualPet underTest = new VirtualPet(0, 0, 0);
+	VirtualPet underTest = new VirtualPet();
 
 	@Test
 	public void hungerShouldGoDownBy5WhenFedBy5() {
 
-		underTest.reduceHunger(5);
+		underTest.reduceHunger();
 		int check = underTest.getHungerLevel();
-		assertEquals(check, 95);
+		assertEquals(check, 5);
 	}
 
 	@Test
 	public void thirstShouldGoDownBy5WhenDrinkBy5() {
 
-		underTest.reduceThirst(5);
+		underTest.reduceThirst();
 		int check = underTest.getThirstLevel();
-		assertEquals(check, 95);
+		assertEquals(check, 5);
 	}
 
 	@Test
 	public void sleepinessShouldGoDownBy5() {
 
-		underTest.reduceSleep(5);
+		underTest.reduceSleep();
 		int check = underTest.getSleepLevel();
-		assertEquals(check, 95);
+		assertEquals(check, 5);
 	}
 
 	@Test
@@ -37,7 +37,7 @@ public class VirtualPetTest {
 
 		underTest.increaseHunger(5);
 		int check = underTest.getHungerLevel();
-		assertEquals(check, 105);
+		assertEquals(check, 15);
 	}
 
 	@Test
@@ -45,7 +45,7 @@ public class VirtualPetTest {
 
 		underTest.increaseThirst(5);
 		int check = underTest.getThirstLevel();
-		assertEquals(check, 105);
+		assertEquals(check, 15);
 	}
 
 	@Test
@@ -53,7 +53,7 @@ public class VirtualPetTest {
 
 		underTest.increaseSleep(5);
 		int check = underTest.getSleepLevel();
-		assertEquals(check, 105);
+		assertEquals(check, 15);
 	}
 
 	@Test
@@ -61,7 +61,7 @@ public class VirtualPetTest {
 
 		underTest.tick();
 		int check = underTest.getHungerLevel();
-		assertEquals(check, 120);
+		assertEquals(check, 15);
 
 	}
 
@@ -71,7 +71,7 @@ public class VirtualPetTest {
 		underTest.tick();
 		underTest.tick();
 		int check = underTest.getHungerLevel();
-		assertEquals(check, 140);
+		assertEquals(check, 20);
 
 	}
 
@@ -80,7 +80,7 @@ public class VirtualPetTest {
 
 		underTest.tick();
 		int check = underTest.getThirstLevel();
-		assertEquals(check, 115);
+		assertEquals(check, 15);
 
 	}
 
@@ -90,7 +90,7 @@ public class VirtualPetTest {
 		underTest.tick();
 		underTest.tick();
 		int check = underTest.getThirstLevel();
-		assertEquals(check, 130);
+		assertEquals(check, 15);
 
 	}
 
@@ -99,7 +99,7 @@ public class VirtualPetTest {
 
 		underTest.tick();
 		int check = underTest.getSleepLevel();
-		assertEquals(check, 110);
+		assertEquals(check, 11);
 
 	}
 
@@ -109,7 +109,7 @@ public class VirtualPetTest {
 		underTest.tick();
 		underTest.tick();
 		int check = underTest.getSleepLevel();
-		assertEquals(check, 120);
+		assertEquals(check, 12);
 
 	}
 }
