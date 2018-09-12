@@ -99,7 +99,7 @@ public class VirtualPetTest {
 
 		underTest.tick();
 		int check = underTest.getSleepLevel();
-		assertEquals(check, 11);
+		assertEquals(check, 15);
 
 	}
 
@@ -109,7 +109,7 @@ public class VirtualPetTest {
 		underTest.tick();
 		underTest.tick();
 		int check = underTest.getSleepLevel();
-		assertEquals(check, 12);
+		assertEquals(check, 15);
 
 	}
 }

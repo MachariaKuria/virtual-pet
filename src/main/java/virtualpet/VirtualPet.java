@@ -55,15 +55,15 @@ public class VirtualPet {
 	}
 
 	public void FeedSimba() {
-		hungerLevel -= 20;
+		hungerLevel -= 5;
 	}
 
 	public void WaterSimba() {
-		thirstLevel -= 25;
+		thirstLevel -= 5;
 	}
 
 	public void SleepSimba() {
-		sleepLevel -= 30;
+		sleepLevel -= 5;
 	}
 
 	public void showSimbaStatus() {
@@ -82,9 +82,10 @@ public class VirtualPet {
 		if ((int) (Math.random() * 10) + 1 > 5) {
 			simbaReaction();
 		} else {
-			thirstLevel += 5;
-			sleepLevel += 1;
 			simbaReaction();
+			thirstLevel += 5;
+			sleepLevel += 5;
+			
 		}
 
 	}
@@ -114,21 +115,18 @@ public class VirtualPet {
 		System.out.println("^...^");
 		System.out.println("(@ @)");
 		System.out.println("(>o<)");
-		System.out.println("(=0=)");
+		System.out.println("(ooo)");
 		System.out.println(">>>x<<<");
 		System.out.println("Look! Simba is happy now....");
 	}
 
 	public void simbaReaction() {
-		if (getHungerLevel() <=10) {
+		if (getHungerLevel() ==10) {
 			simbaHappy();
-		} else if (getThirstLevel() <=10) {
+		} else if (getThirstLevel() ==10) {
 			simbaPlayfull();
-		} else if (getSleepLevel() <=10) {
-			simbaSad();	
-		}else  {
-			simbaPlayfull();
-		}
+		} else {
+			simbaSad();	}
 	}
 
 	public VirtualPet(int hungerLevel, int thirstLevel, int sleepLevel) {
